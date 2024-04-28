@@ -48,7 +48,7 @@ function Navbar() {
 
     return (
         <>
-        <div className="container mx-auto">
+        <div className="container mx-auto my-5">
             {/* Desktop Navbar */}
             <div className="flex md:flex lg:flex">
                 <div className="grid grid-cols-3 items-center w-full">
