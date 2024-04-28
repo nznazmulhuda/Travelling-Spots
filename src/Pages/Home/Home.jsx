@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import Banner from "../../Components/Home/Banner"
 import SpotCard from "../../Components/Home/SpotCard"
 import SpotCard2 from "../../Components/Home/SpotCard2"
@@ -25,7 +25,7 @@ function Home() {
 
             <div className="text-center">
                 {
-                    spots.length > 6 && <button className="btn btn-ghost bg-green-700 hover:bg-green-800 text-white font-bold text-sm md:text-lg my-5">Show all</button>
+                    spots.length > 6 && <Link to="/all-tourists-spot" className="btn btn-ghost bg-green-700 hover:bg-green-800 text-white font-bold text-sm md:text-lg my-5">Show all</Link>
                 }
             </div>
         </div>
