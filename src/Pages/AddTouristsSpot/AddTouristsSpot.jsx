@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {AuthContext} from '../../AuthProvider/AuthProvider'
 
 
 function AddTouristsSpot() {
 
     const Navigate = useNavigate()
+    const {user} = useContext(AuthContext)
 
     const handleAddSpot = e => {
         e.preventDefault();
@@ -116,7 +119,7 @@ function AddTouristsSpot() {
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Email</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="email" name="email" placeholder="Email" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 cursor-not-allowed" type="email" name="email" value={user.email} disabled />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">

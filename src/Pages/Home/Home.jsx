@@ -23,23 +23,23 @@ function Home() {
     return (
         <>
         <div>
-            <div>
-                {/* <Banner /> */}
-            </div>
+            {/* <div>
+                <Banner />
+            </div> */}
 
-            <div className="flex">
+            {/* <div className="flex">
                 <div className="container mx-auto space-y-8">
                     {
                         datas.slice(0,6).map((spot, id)=> <SpotCard2 spot={spot} key={id} id={id} />)
                     }
                 </div>
-            </div>
+            </div> */}
 
-            <div className="text-center">
+            {/* <div className="text-center">
                 {
                     datas.length > 6 && <Link to="/all-tourists-spot" className="btn btn-ghost bg-green-700 hover:bg-green-800 text-white font-bold text-sm md:text-lg my-5">Show all</Link>
                 }
-            </div>
+            </div> */}
         </div>
         </>
     )

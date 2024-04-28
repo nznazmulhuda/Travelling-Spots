@@ -15,8 +15,11 @@ function SpotCard2({id, spot}) {
 
                 <p className="text-gray-500 text-[12px] lg:text-sm text-center mb-2">
                     {
-                        shortDisc.split(" ").slice(0, 20).join(" ")
-                    }...
+                        shortDisc.split(" ").slice(0, 30).join(" ")
+                    }
+                    {
+                        shortDisc.split(" ").length > 30 && '...'
+                    }
                 </p>
 
                 <div>
