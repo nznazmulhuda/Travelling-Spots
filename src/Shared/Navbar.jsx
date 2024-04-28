@@ -1,10 +1,13 @@
 import { Link, NavLink } from "react-router-dom"
 import {IoMdMenu } from 'react-icons/io'
 import {RxCross1} from 'react-icons/rx'
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AuthContext } from '../AuthProvider/AuthProvider'
 
 function Navbar() {
     const [isMenu, setIsMenu] = useState(false)
+    const {user, signOutUser} = useContext(AuthContext)
+    const [ishover, setIshover] = useState(false)
 
     // large device links
     const largeLinks = <ul className="flex gap-5">
@@ -69,28 +72,52 @@ function Navbar() {
                         </div>
                     </Link>
 
-                    <div className="hidden md:flex lg:flex items-center justify-end">
-                        <div className="space-x-1 md:space-x-2 lg:space-x-3">
-                            <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                                Login
-                            </Link>
+                    {
+                        user ? 
+                        <div className="hidden md:flex lg:flex items-center justify-end relative">
+                            <div className="flex items-center justify-center flex-col" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
+                                <div className="w-20 rounded-full border-4 cursor-pointer border-green-900 p-1">
+                                    <img className="w-full rounded-full" src={user.photoURL} alt="" />
+                                </div>
+                                <div className={`${ishover ? "absolute" : "hidden"} bg-white z-[9999999] py-3 px-4 rounded-lg w-[60%] top-full right-1`}>
+                                    <div>
+                                        <h1>Welcome, <span className="text-green-900 text-xl font-bold">{user.displayName}</span></h1>
+                                        <div className="divider my-2"></div>
+                                        <div>
+                                            <button onClick={signOutUser} className="btn btn-ghost w-full bg-green-700 text-white font-bold text-xl hover:bg-green-800">Log out</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> :
+                        <div className={`hidden md:flex lg:flex items-center justify-end`}>
+                            <div className="space-x-1 md:space-x-2 lg:space-x-3">
+                                <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                                    Login
+                                </Link>
 
-                            <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                                Register
-                            </Link>
+                                <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                                    Register
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
-            <div className="flex md:hidden lg:hidden justify-around mt-2">
-                            <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                                Login
-                            </Link>
 
-                            <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                                Register
-                            </Link>
-                        </div>
+            {
+                user ? 
+                "" :
+                <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
+                    <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                        Login
+                    </Link>
+
+                    <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                        Register
+                    </Link>
+                </div>
+            }
         </div>
         </>
     )

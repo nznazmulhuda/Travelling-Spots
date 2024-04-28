@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import {FaGoogle, FaGithub} from 'react-icons/fa6'
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 function Login() {
+
+    const {emailLogin, googleLogin, githubLogin, loading} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const { state } = useLocation();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -10,15 +16,31 @@ function Login() {
         const email = form.email.value;
         const pass = form.password.value;
 
-        console.log({email, pass});
+        emailLogin(email, pass)
+            .then((res)=> {
+                toast.success("Login Success!");
+                navigate(state ? state : "/");
+            })
+            .catch(e=>toast.error(e.message))
+        form.reset()
     }
 
     const handleGoogle = () => {
-        toast.success("Google Loged in");
+        googleLogin()
+            .then(()=> {
+                toast.success("Google Login Success!");
+                navigate(state ? state : "/")
+            })
+            .catch(e=>toast.error(e.message))
     }
 
     const handleGithub = () => {
-        toast.success('Github Loged in')
+        githubLogin()
+            .then(()=> {
+                toast.success("Github Login Success!");
+                navigate(state ? state : "/")
+            })
+            .catch(e=>toast.error(e.message))
     }
 
   return (
@@ -29,7 +51,11 @@ function Login() {
                 Log<span className="text-green-700">in</span>
             </h1>
 
-            <form onSubmit={handleLogin} className="border rounded-lg py-3 md:py-4 lg:py-5 px-5 md:px-8 lg:px-10 w-[90%] md:w-[70%] lg:w-[60%] mx-auto">
+            {
+                loading && <div className="flex items-center justify-center my-8 md:my-9 lg:my-10"><span className="loading loading-spinner loading-lg"></span></div>
+            }
+
+            <form onSubmit={handleLogin} className={`border ${loading && "hidden"} rounded-lg py-3 md:py-4 lg:py-5 px-5 md:px-8 lg:px-10 w-[90%] md:w-[70%] lg:w-[60%] mx-auto`}>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                         Email
