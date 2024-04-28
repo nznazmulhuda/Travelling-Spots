@@ -5,6 +5,7 @@ import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import PrivateRoute from './PrivateRoute'
 import AddTouristsSpot from "../Pages/AddTouristsSpot/AddTouristsSpot";
+import UpdateTouristSpot from "../Pages/UpdateTouristSpot/UpdateTouristSpot";
 
 const Router = createBrowserRouter([
     {
@@ -27,6 +28,12 @@ const Router = createBrowserRouter([
                 path: "/add-tourists-spot",
                 element: <PrivateRoute>
                     <AddTouristsSpot />
+                </PrivateRoute>
+            },
+            {
+                path: "/update-tourists-spot",
+                element: <PrivateRoute>
+                    <UpdateTouristSpot />
                 </PrivateRoute>
             }
         ]

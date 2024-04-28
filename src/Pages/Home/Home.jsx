@@ -1,5 +1,6 @@
 import Banner from "../../Components/Home/Banner"
 import SpotCard from "../../Components/Home/SpotCard"
+import SpotCard2 from "../../Components/Home/SpotCard2"
 
 
 function Home() {
@@ -13,10 +14,12 @@ function Home() {
                 {/* <Banner /> */}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {
-                    test.slice(0,6).map((card, id)=><SpotCard key={id} />)
-                }
+            <div className="flex">
+                <div className="container mx-auto space-y-8">
+                    {
+                        test.slice(0,6).map((card, id)=> <SpotCard2 key={id} id={id} />)
+                    }
+                </div>
             </div>
 
             <div className="text-center">

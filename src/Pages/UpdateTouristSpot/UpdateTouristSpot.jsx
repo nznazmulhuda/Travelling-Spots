@@ -1,42 +1,42 @@
 
 
-function AddTouristsSpot() {
+function UpdateTouristSpot() {
 
-    const handleAddSpot = e => {
-        e.preventDefault();
-        const form = e.target;
-        const photoUrl = form.photoUrl.value;
-        const spotName = form.spotName.value;
-        const countryName = form.countryName.value;
-        const location = form.location.value;
-        const cost = form.cost.value;
-        const season = form.season.value;
-        const travelTime = form.travelTime.value;
-        const totalVisitors = form.totalVisitors.value;
-        const shortDisc = form.shortDisc.value;
-        const email = form.email.value;
-        const name = form.name.value;
+  const handleAddSpot = e => {
+    e.preventDefault();
+    const form = e.target;
+    const photoUrl = form.photoUrl.value;
+    const spotName = form.spotName.value;
+    const countryName = form.countryName.value;
+    const location = form.location.value;
+    const cost = form.cost.value;
+    const season = form.season.value;
+    const travelTime = form.travelTime.value;
+    const totalVisitors = form.totalVisitors.value;
+    const shortDisc = form.shortDisc.value;
+    const email = form.email.value;
+    const name = form.name.value;
 
-        console.log({
-            photoUrl,
-            spotName,
-            countryName,
-            location,
-            cost,
-            season,
-            travelTime,
-            totalVisitors,
-            shortDisc,
-            email,
-            name
-        });
-    }
+    console.log({
+        photoUrl,
+        spotName,
+        countryName,
+        location,
+        cost,
+        season,
+        travelTime,
+        totalVisitors,
+        shortDisc,
+        email,
+        name
+    });
+}
 
   return (
     <>
         <div className="contaFiner mx-auto my-10 border-t border-b py-10 rounded-t-3xl rounded-b-3xl border-green-700 shadow-2xl">
             <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-4xl">
-                <span className="text-green-500">A</span>dd <span className="text-green-500">T</span>ourists <span className="text-green-500">S</span>pot
+                <span className="text-green-500">U</span>pdate <span className="text-green-500">T</span>ourists <span className="text-green-500">S</span>pot
             </h1>
 
             <form className="w-full md:w-[90%] lg:w-[85%] mx-auto border p-2 md:p-5 lg:p-10 rounded-xl shadow-2xl mt-5" onSubmit={handleAddSpot}>
@@ -95,17 +95,7 @@ function AddTouristsSpot() {
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
-                    <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Email</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="email" name="email" placeholder="Email" required />
-                </div>
-                
-                <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
-                    <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Name</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="name" placeholder="Name" required />
-                </div>
-                
-                <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
-                    <input className="outline-none bg-green-700 hover:bg-green-800 text-white font-bold hover:shadow-xl rounded-full w-full py-2 px-3" type="submit" placeholder="Image URL" required />
+                    <input className="outline-none bg-green-700 hover:bg-green-800 text-white font-bold hover:shadow-xl rounded-full w-full py-2 px-3" type="submit" value={"Update"} placeholder="Image URL" required />
                 </div>
             </form>
         </div>
@@ -113,4 +103,4 @@ function AddTouristsSpot() {
   )
 }
 
-export default AddTouristsSpot
+export default UpdateTouristSpot
