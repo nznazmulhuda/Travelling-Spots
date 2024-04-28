@@ -27,13 +27,13 @@ function Home() {
                 <Banner />
             </div> */}
 
-            {/* <div className="flex">
+            <div className="flex">
                 <div className="container mx-auto space-y-8">
                     {
                         datas.slice(0,6).map((spot, id)=> <SpotCard2 spot={spot} key={id} id={id} />)
                     }
                 </div>
-            </div> */}
+            </div>
 
             {/* <div className="text-center">
                 {

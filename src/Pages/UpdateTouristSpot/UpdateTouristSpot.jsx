@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
+import { json, useNavigate, useParams } from "react-router-dom"
 
 
 function UpdateTouristSpot() {
+
+    const {id} = useParams()
+    const [data, setData] = useState({})
+    const navigate = useNavigate()
+
+    const {photoUrl,spotName,countryName,location,cost,season,travelTime,totalVisitors,shortDisc,_id} = data;
+
+    useEffect(()=> {
+        fetch(`http://localhost:5000/details/${id}`)
+            .then(res=>res.json())
+            .then(data=>setData(data))
+    }, [])
 
   const handleAddSpot = e => {
     e.preventDefault();
@@ -14,10 +28,8 @@ function UpdateTouristSpot() {
     const travelTime = form.travelTime.value;
     const totalVisitors = form.totalVisitors.value;
     const shortDisc = form.shortDisc.value;
-    const email = form.email.value;
-    const name = form.name.value;
 
-    console.log({
+    const newSpotDetail = {
         photoUrl,
         spotName,
         countryName,
@@ -27,9 +39,17 @@ function UpdateTouristSpot() {
         travelTime,
         totalVisitors,
         shortDisc,
-        email,
-        name
-    });
+    }
+
+    fetch(`http://localhost:5000/update/${_id}`, {
+        method: "put",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(newSpotDetail)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        navigate("/my-lists")
+    })
 }
 
   return (
@@ -42,19 +62,18 @@ function UpdateTouristSpot() {
             <form className="w-full md:w-[90%] lg:w-[85%] mx-auto border p-2 md:p-5 lg:p-10 rounded-xl shadow-2xl mt-5" onSubmit={handleAddSpot}>
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Image</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="url" name="photoUrl" placeholder="Image URL" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="url" name="photoUrl" defaultValue={photoUrl} placeholder={photoUrl} />
                 </div>
 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Spot Name</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="spotName" placeholder="Tourists Spot Name" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="spotName" defaultValue={spotName} placeholder={spotName} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Country Name</label>
-                    {/* <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="countryName" placeholder="Counrty Name" required /> */}
-                    <select name="countryName" className="select select-bordered outline-none border-b w-full pb-2 focus:shadow-xl focus:outline-none focus:border-none border-t-0 border-r-0 border-l-0 rounded-none px-3">
-                        <option disabled>Pick Country</option>
+                    <select name="countryName" defaultValue={countryName} className="select select-bordered outline-none border-b w-full pb-2 focus:shadow-xl focus:outline-none focus:border-none border-t-0 border-r-0 border-l-0 rounded-none px-3">
+                        <option selected disabled>{countryName}</option>
                         <option>Bangladesh</option>
                         <option>Thailand</option>
                         <option>Indonesia</option>
@@ -66,36 +85,36 @@ function UpdateTouristSpot() {
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Location</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="location" placeholder="Location" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" defaultValue={location} name="location" placeholder={location} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Average Cost</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="cost" placeholder="Average Cost" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="cost" defaultValue={cost} placeholder={cost} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Seasonality</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="season" placeholder="Seasonality" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="season" defaultValue={season} placeholder={season} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Travel Time</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="travelTime" placeholder="Travel Time" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="travelTime" defaultValue={travelTime} placeholder={travelTime} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Total Visitors Per Year</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="number" name="totalVisitors" placeholder="Total Visitors Per Year" required />
+                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="number" name="totalVisitors" defaultValue={totalVisitors} placeholder={totalVisitors} />
                 </div>
 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Short Description</label>
-                    <textarea className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 resize-none" type="text" name="shortDisc" placeholder="Total Visitors Per Year" required />
+                    <textarea className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 resize-none" type="text" name="shortDisc" defaultValue={shortDisc} placeholder={shortDisc} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
-                    <input className="outline-none bg-green-700 hover:bg-green-800 text-white font-bold hover:shadow-xl rounded-full w-full py-2 px-3" type="submit" value={"Update"} placeholder="Image URL" required />
+                    <input className="outline-none bg-green-700 hover:bg-green-800 text-white font-bold hover:shadow-xl rounded-full w-full py-2 px-3" type="submit" value={"Update"} placeholder="Image URL" />
                 </div>
             </form>
         </div>
