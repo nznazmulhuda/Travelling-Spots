@@ -17,8 +17,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
-                loader: () => fetch("http://localhost:5000/addSpots")
+                element: <Home />
             },
             {
                 path: "/login",

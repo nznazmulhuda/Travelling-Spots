@@ -11,19 +11,19 @@ function Navbar() {
 
     // large device links
     const largeLinks = <ul className="flex gap-5">
-        <NavLink to={"/"} className={({isActive})=> isActive? "text-green-600 text-[12px] border-b font-semibold" : "text-black hover:text-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/"} className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             Home
         </NavLink>
 
-        <NavLink to={"/all-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-b font-semibold" : "text-black hover:text-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/all-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             All Tourists Spot
         </NavLink>
 
-        <NavLink to={"/add-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-b font-semibold" : "text-black hover:text-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/add-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             Add Tourists Spot
         </NavLink>
 
-        <NavLink to={"/my-lists"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-b font-semibold" : "text-black hover:text-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/my-lists"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             My List
         </NavLink>
     </ul>
