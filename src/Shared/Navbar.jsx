@@ -76,15 +76,15 @@ function Navbar() {
                         user ? 
                         <div className="hidden md:flex lg:flex items-center justify-end relative">
                             <div className="flex items-center justify-center flex-col" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
-                                <div className="w-20 rounded-full border-4 cursor-pointer border-green-900 p-1">
+                                <div className="md:w-14 lg:w-20 rounded-full md:border-2 lg:border-4 cursor-pointer border-green-900 p-1">
                                     <img className="w-full rounded-full" src={user.photoURL} alt="" />
                                 </div>
-                                <div className={`${ishover ? "absolute" : "hidden"} bg-white z-[9999999] py-3 px-4 rounded-lg w-[60%] top-full right-1`}>
+                                <div className={`${ishover ? "absolute" : "hidden"} bg-white z-[9999999] py-3 px-4 rounded-lg lg:w-[60%] top-full right-1`}>
                                     <div>
-                                        <h1>Welcome, <span className="text-green-900 text-xl font-bold">{user.displayName}</span></h1>
+                                        <h1 className="md:text-sm lg:text-lg">Welcome, <span className="text-green-900 lg:text-xl font-bold">{user.displayName}</span></h1>
                                         <div className="divider my-2"></div>
                                         <div>
-                                            <button onClick={signOutUser} className="btn btn-ghost w-full bg-green-700 text-white font-bold text-xl hover:bg-green-800">Log out</button>
+                                            <button onClick={signOutUser} className="btn btn-ghost w-full bg-green-700 text-white font-bold md:text-lg lg:text-xl hover:bg-green-800">Log out</button>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,21 @@ function Navbar() {
 
             {
                 user ? 
-                "" :
+                <div className="flex md:hidden lg:hidden justify-around mt-2 relative">
+                    <div className="w-12 p-1 rounded-full border-green-900 border-2" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
+                        <img className="w-full rounded-full" src={user.photoURL} alt="" />
+                    </div>
+
+                    <div className={`${ishover ? "absolute" : "hidden"} z-[999999999] top-full`}>
+                        <div className="bg-white py-2 px-4 rounded-lg">
+                            <h1 className="text-xs">Welcome, <span className="text-green-900 font-bold text-sm">{user.displayName}</span></h1>
+                            <div className="divider my-2"></div>
+                            <div>
+                                <button onClick={signOutUser} className="btn btn-ghost w-full bg-green-700 text-white font-bold hover:bg-green-800">Log out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> :
                 <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
                     <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
                         Login
