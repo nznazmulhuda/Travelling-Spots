@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { json, useNavigate, useParams } from "react-router-dom"
+import {toast} from 'react-toastify'
 
 
 function UpdateTouristSpot() {
@@ -48,7 +49,8 @@ function UpdateTouristSpot() {
     })
     .then(res=>res.json())
     .then(data=>{
-        navigate("/my-lists")
+        toast.success("Spot Updated!");
+        navigate("/my-lists");
     })
 }
 

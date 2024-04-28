@@ -60,9 +60,8 @@ function MyLists() {
               <span className="hidden md:flex lg:flex">Delete</span> <span className="flex md:hidden lg:hidden">Del</span>
             </div>
         </div>
-
         {
-          datas.map((row, id)=><Row key={row._id} row={row} id={id} />)
+          datas.map((row, id)=><Row key={row._id} row={row} id={id} setDatas={setDatas} datas={datas} />)
         }
       </div>
     </>
