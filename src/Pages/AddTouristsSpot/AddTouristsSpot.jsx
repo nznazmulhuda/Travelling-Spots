@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function AddTouristsSpot() {
+
+    const Navigate = useNavigate()
 
     const handleAddSpot = e => {
         e.preventDefault();
@@ -17,7 +21,7 @@ function AddTouristsSpot() {
         const email = form.email.value;
         const name = form.name.value;
 
-        console.log({
+        const spot = {
             photoUrl,
             spotName,
             countryName,
@@ -29,7 +33,23 @@ function AddTouristsSpot() {
             shortDisc,
             email,
             name
-        });
+        }
+
+        fetch("http://localhost:5000/addSpots", {
+            method: "POST",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(spot)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.acknowledged) {
+                toast.success("Your Spots are added!")
+                // Navigate("/")
+                form.reset()
+            } else {
+                toast.error("Somthing is wrong! try again")
+            }
+        })
     }
 
   return (
