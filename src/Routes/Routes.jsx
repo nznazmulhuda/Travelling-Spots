@@ -3,6 +3,8 @@ import Layout from "../Layout/Layout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
+import PrivateRoute from './PrivateRoute'
+import AddTouristsSpot from "../Pages/AddTouristsSpot/AddTouristsSpot";
 
 const Router = createBrowserRouter([
     {
@@ -20,6 +22,12 @@ const Router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />
+            },
+            {
+                path: "/add-tourists-spot",
+                element: <PrivateRoute>
+                    <AddTouristsSpot />
+                </PrivateRoute>
             }
         ]
     }
