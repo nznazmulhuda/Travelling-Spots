@@ -10,6 +10,7 @@ import MyLists from "../Pages/MyLists/MyLists";
 import AllTouristsSpot from "../Pages/AllTouristsSpot/AllTouristsSpot";
 import SingleSpot from "../Pages/SingleSpot/SingleSpot";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Country from "../Pages/Country/Country";
 
 const Router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <SingleSpot />
                 </PrivateRoute>
+            },
+            {
+                path: "/category/:countryName",
+                element: <Country />
             }
         ]
     }
