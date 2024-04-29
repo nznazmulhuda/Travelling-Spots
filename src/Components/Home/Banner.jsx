@@ -63,7 +63,7 @@ function Banner() {
                             Traveling With Earh Preview
                         </h3>
 
-                        <h1 className="text-green-900 font-lato text-xl md:text-3xl lg:text-5xl font-semibold leading-6 md:leading-8 lg:leading-[50px] mb-3 md:mb-5 lg:mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                        <h1 className="text-white font-lato text-xl md:text-3xl lg:text-5xl font-semibold leading-6 md:leading-8 lg:leading-[50px] mb-3 md:mb-5 lg:mb-8">
                             Wanderlust Expeditions: <br /> <span className="text-white">E</span>xplore, <span className="text-white">D</span>ream, <span className="text-white">D</span>iscover"
                         </h1>
 

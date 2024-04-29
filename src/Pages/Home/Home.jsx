@@ -6,6 +6,8 @@ import CountryCard from "../../Components/Home/CountryCard"
 import Faq from "../../Components/Home/Faq"
 import Lottie from "lottie-react";
 import faq from '../../assets/faq.json'
+import contact from '../../assets/contact.json'
+import ContactUs from "../../Components/Home/ContactUs"
 
 
 function Home() {
@@ -28,7 +30,7 @@ function Home() {
     return (
         <>
         <div>
-            {/* <div>
+            <div>
                 <Banner />
             </div>
 
@@ -55,7 +57,7 @@ function Home() {
                         category.map((data, id)=> <CountryCard key={id} data={data} />)
                     }
                 </div>
-            </div> */}
+            </div>
 
             <div className="my-10 border-y-2 py-10 border-green-600 rounded-3xl">
                 <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-5 -mt-5"><span className="text-green-600">F</span>requently <span className="text-green-600">A</span>sked <span className="text-green-600">Q</span>uestions</h1>
@@ -68,6 +70,20 @@ function Home() {
 
                     <div className="flex flex-col gap-3 items-center justify-center">
                         <Faq />
+                    </div>
+                </div>
+            </div>
+
+            <div className="my-10 border-y-2 py-10 border-green-600 rounded-3xl">
+                <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-5 -mt-5"><span className="text-green-600">C</span>ontact <span className="text-green-600">U</span>s</h1>
+
+                <div className="flex flex-col-reverse lg:flex-row container mx-auto gap-5">
+                    <div className="flex flex-col w-full lg:w-1/2 gap-3 items-center justify-center py-10 lg:py-0 border border-base-300 rounded-xl">
+                        <ContactUs />
+                    </div>
+
+                    <div className="flex items-center justify-center w-full lg:w-1/2">
+                        <Lottie animationData={contact} className="w-full h-[50vh] md:h-[70vh]" />
                     </div>
                 </div>
             </div>
