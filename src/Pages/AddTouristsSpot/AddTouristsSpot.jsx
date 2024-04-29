@@ -47,14 +47,14 @@ function AddTouristsSpot() {
         .then(data=>{
             if(data.acknowledged) {
                 toast.success("Your Spots are added!")
-                // Navigate("/")
+                Navigate("/my-lists")
                 form.reset()
             } else {
-                toast.error("Somthing is wrong! try again")
+                toast.error("Somthing is wrong! try again");
+                form.reset();
             }
         })
     }
-
   return (
     <>
         <div className="contaFiner mx-auto my-10 border-t border-b py-10 rounded-t-3xl rounded-b-3xl border-green-700 shadow-2xl">
@@ -119,7 +119,7 @@ function AddTouristsSpot() {
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Email</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 cursor-not-allowed" type="email" name="email" value={user.email} disabled />
+                    <input className={`outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 ${user.email && 'cursor-not-allowed'}`} type="email" name="email" value={user.email} disabled={user.email && 'disabled'} placeholder="Email" />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">

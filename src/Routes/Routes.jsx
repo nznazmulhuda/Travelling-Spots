@@ -11,6 +11,8 @@ import AllTouristsSpot from "../Pages/AllTouristsSpot/AllTouristsSpot";
 import SingleSpot from "../Pages/SingleSpot/SingleSpot";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Country from "../Pages/Country/Country";
+import EmailVerify from "../Pages/EmailVerify/EmailVerify";
+import EmailVerifyRoute from "./EmailVerifyRoute";
 
 const Router = createBrowserRouter([
     {
@@ -62,6 +64,12 @@ const Router = createBrowserRouter([
             {
                 path: "/category/:countryName",
                 element: <Country />
+            },
+            {
+                path: "/emailVerify",
+                element: <EmailVerifyRoute>
+                    <EmailVerify />
+                </EmailVerifyRoute>
             }
         ]
     }
