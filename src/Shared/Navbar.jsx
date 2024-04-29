@@ -1,13 +1,27 @@
 import { Link, NavLink } from "react-router-dom"
 import {IoMdMenu } from 'react-icons/io'
 import {RxCross1} from 'react-icons/rx'
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from '../AuthProvider/AuthProvider'
+import { FiSun } from "react-icons/fi";
+import { FaMoon, FaRegMoon } from "react-icons/fa";
 
 function Navbar() {
     const [isMenu, setIsMenu] = useState(false)
     const {user, signOutUser} = useContext(AuthContext)
     const [ishover, setIshover] = useState(false)
+    const [theme, setTheme] = useState(localStorage.getItem("theme"))
+
+    useEffect(()=> {
+        document.querySelector("html").setAttribute("data-theme", theme)
+    },[])
+
+    const handleTheme = theme => {
+        console.log(theme);
+        setTheme(theme)
+        document.querySelector("html").setAttribute("data-theme", theme)
+        localStorage.setItem("theme", theme)
+    }
 
     // large device links
     const largeLinks = <ul className="flex gap-5">
@@ -44,7 +58,13 @@ function Navbar() {
     <NavLink to={"/my-lists"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-b font-semibold text-center" : "text-black text-center hover:text-green-600 hover:border-b text-[12px] font-semibold"}>
         My List
     </NavLink>
-</ul>
+                            
+    <div className="text-center">
+        {
+            theme === "dark" ? <FaMoon className="text-xl md:text-2xl cursor-pointer text-center mx-auto" onClick={()=>handleTheme("light")} /> : <FiSun className="text-xl md:text-2xl cursor-pointer text-center mx-auto" onClick={()=> handleTheme("dark")} />
+        }
+    </div>
+    </ul>
 
     return (
         <>
@@ -89,6 +109,12 @@ function Navbar() {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="hidden lg:flex">
+                                {
+                                    theme === "dark" ? <FaMoon className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=>handleTheme("light")} /> : <FiSun className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=> handleTheme("dark")} />
+                                }
+                            </div>
                         </div> :
                         <div className={`hidden md:flex lg:flex items-center justify-end`}>
                             <div className="space-x-1 md:space-x-2 lg:space-x-3">
@@ -99,6 +125,12 @@ function Navbar() {
                                 <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
                                     Register
                                 </Link>
+                            </div>
+                            
+                            <div>
+                                {
+                                    theme === "dark" ? <FaMoon className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=>handleTheme("light")} /> : <FiSun className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=> handleTheme("dark")} />
+                                }
                             </div>
                         </div>
                     }
@@ -122,14 +154,22 @@ function Navbar() {
                         </div>
                     </div>
                 </div> :
-                <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
-                    <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                        Login
-                    </Link>
+                <div>
+                    <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
+                        <Link to={"/login"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                            Login
+                        </Link>
 
-                    <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
-                        Register
-                    </Link>
+                        <Link to={"/register"} className="btn btn-ghost text-[12px] rounded-lg md:text-[14px] lg:text-[16px] bg-green-700 hover:bg-green-800 text-white">
+                            Register
+                        </Link>
+                    </div>
+                                
+                    <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
+                        {
+                            theme === "dark" ? <FaMoon className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=>handleTheme("light")} /> : <FiSun className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=> handleTheme("dark")} />
+                        }
+                    </div>
                 </div>
             }
         </div>

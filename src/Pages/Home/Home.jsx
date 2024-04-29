@@ -36,12 +36,12 @@ function Home() {
                         datas.slice(0,6).map((spot, id)=> <SpotCard2 spot={spot} key={id} id={id} />)
                     }
                 </div>
-            </div>
 
-            <div className="text-center">
-                {
-                    datas.length > 6 && <Link to="/all-tourists-spot" className="btn btn-ghost bg-green-700 hover:bg-green-800 text-white font-bold text-sm md:text-lg my-5">Show all</Link>
-                }
+                <div className="text-center">
+                    {
+                        datas.length > 6 && <Link to="/all-tourists-spot" className="btn btn-ghost bg-green-700 hover:bg-green-800 text-white font-bold text-sm md:text-lg mt-10">Show all</Link>
+                    }
+                </div>
             </div>
 
             <div className="my-10 border-y-2 py-10 border-green-600 rounded-3xl">
