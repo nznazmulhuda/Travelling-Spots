@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from '../AuthProvider/AuthProvider'
 import { FiSun } from "react-icons/fi";
 import { FaMoon, FaRegMoon } from "react-icons/fa";
+import avater from '.././assets/avater.png'
 
 function Navbar() {
     const [isMenu, setIsMenu] = useState(false)
@@ -25,19 +26,19 @@ function Navbar() {
 
     // large device links
     const largeLinks = <ul className="flex gap-5">
-        <NavLink to={"/"} className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/"} className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-base-content hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             Home
         </NavLink>
 
-        <NavLink to={"/all-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/all-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-base-content hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             All Tourists Spot
         </NavLink>
 
-        <NavLink to={"/add-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/add-tourists-spot"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-base-content hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             Add Tourists Spot
         </NavLink>
 
-        <NavLink to={"/my-lists"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-black hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
+        <NavLink to={"/my-lists"}  className={({isActive})=> isActive? "text-green-600 text-[12px] border-green-600 border-b font-semibold" : "text-base-content hover:text-green-600 border-b border-transparent hover:border-green-600 hover:border-b text-[12px] font-semibold"}>
             My List
         </NavLink>
     </ul>
@@ -96,8 +97,8 @@ function Navbar() {
                         user ? 
                         <div className="hidden md:flex lg:flex items-center justify-end relative">
                             <div className="flex items-center justify-center flex-col" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
-                                <div className="md:w-14 lg:w-20 rounded-full md:border-2 lg:border-4 cursor-pointer border-green-900 p-1">
-                                    <img className="w-full rounded-full" src={user.photoURL} alt="" />
+                                <div className="md:w-10 lg:w-16 md:h-10 lg:h-16 rounded-full md:border-2 lg:border-4 cursor-pointer border-green-900 p-1">
+                                    <img className="w-full rounded-full" src={user.photoURL ? user.photoURL : avater} alt="" />
                                 </div>
                                 <div className={`${ishover ? "absolute" : "hidden"} bg-white z-[9999999] py-3 px-4 rounded-lg lg:w-[60%] top-full right-1`}>
                                     <div>
@@ -140,8 +141,8 @@ function Navbar() {
             {
                 user ? 
                 <div className="flex md:hidden lg:hidden justify-around mt-2 relative">
-                    <div className="w-12 p-1 rounded-full border-green-900 border-2" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
-                        <img className="w-full rounded-full" src={user.photoURL} alt="" />
+                    <div className="w-12 h-12 p-1 rounded-full border-green-900 border-2" onMouseOver={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>
+                        <img className="w-full rounded-full" src={user.photoURL ? user.photoURL : avater} alt="" />
                     </div>
 
                     <div className={`${ishover ? "absolute" : "hidden"} z-[999999999] top-full`}>

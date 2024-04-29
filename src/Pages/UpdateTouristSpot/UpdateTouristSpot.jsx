@@ -64,12 +64,12 @@ function UpdateTouristSpot() {
             <form className="w-full md:w-[90%] lg:w-[85%] mx-auto border p-2 md:p-5 lg:p-10 rounded-xl shadow-2xl mt-5" onSubmit={handleAddSpot}>
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Image</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="url" name="photoUrl" defaultValue={photoUrl} placeholder={photoUrl} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="url" name="photoUrl" defaultValue={photoUrl} placeholder={photoUrl} />
                 </div>
 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Spot Name</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="spotName" defaultValue={spotName} placeholder={spotName} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="spotName" defaultValue={spotName} placeholder={spotName} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
@@ -87,32 +87,32 @@ function UpdateTouristSpot() {
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Location</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" defaultValue={location} name="location" placeholder={location} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="text" defaultValue={location} name="location" placeholder={location} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Average Cost</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="cost" defaultValue={cost} placeholder={cost} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="cost" defaultValue={cost} placeholder={cost} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Seasonality</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="season" defaultValue={season} placeholder={season} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="season" defaultValue={season} placeholder={season} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Travel Time</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="travelTime" defaultValue={travelTime} placeholder={travelTime} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="travelTime" defaultValue={travelTime} placeholder={travelTime} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Total Visitors Per Year</label>
-                    <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="number" name="totalVisitors" defaultValue={totalVisitors} placeholder={totalVisitors} />
+                    <input className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3" type="number" name="totalVisitors" defaultValue={totalVisitors} placeholder={totalVisitors} />
                 </div>
 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                     <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Short Description</label>
-                    <textarea className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 resize-none" type="text" name="shortDisc" defaultValue={shortDisc} placeholder={shortDisc} />
+                    <textarea className="outline-none border-b w-full py-2 bg-transparent focus:border-b-green-800 focus:shadow-xl px-3 resize-none" type="text" name="shortDisc" defaultValue={shortDisc} placeholder={shortDisc} />
                 </div>
                 
                 <div className="space-y-2 flex flex-col items-start gap-2 mb-8">

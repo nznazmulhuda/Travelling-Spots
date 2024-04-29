@@ -67,7 +67,7 @@ function Banner() {
                             Wanderlust Expeditions: <br /> <span className="text-white">E</span>xplore, <span className="text-white">D</span>ream, <span className="text-white">D</span>iscover"
                         </h1>
 
-                        <p className="font-medium md:font-semibold lg:font-semibold text-xs md:text-sm lg:text-sm">
+                        <p className="font-medium md:font-semibold lg:font-semibold text-xs md:text-sm lg:text-sm text-base-200">
                             Welcome to <span className="border-b border-green-800 cursor-pointer">Earth Preview</span>, where the world is at your fingertips. Dive into a virtual realm of exploration and adventure, where every click opens up new horizons and possibilities. 
                         </p>
                     </div>

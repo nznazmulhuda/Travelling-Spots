@@ -4,7 +4,7 @@ function Footer() {
     return (
         <>
         <div className="bg-green-900">
-          <footer className="footer p-10 text-neutral-content">
+          <footer className="footer items-center justify-evenly p-10 text-neutral-content">
             <aside>
             <Link to={"/"} className="flex items-center justify-center">
                                   <div className="flex flex-row lg:flex-col">
@@ -14,14 +14,14 @@ function Footer() {
                               </Link>
             </aside> 
 
-          <nav>
-              <h6 className="footer-title">Contact Info</h6>
-              <div>
-                  <p>Phone: +880123456789</p>
-                  <p>Email: rahim@korim.com</p>
-                  <p>Address: Banani, Dhaka-1400</p>
-              </div>
-          </nav>
+            <nav>
+                <h6 className="footer-title">Contact Info</h6>
+                <div>
+                    <p>Phone: +880123456789</p>
+                    <p>Email: rahim@korim.com</p>
+                    <p>Address: Banani, Dhaka-1400</p>
+                </div>
+            </nav>
 
             <nav>
               <h6 className="footer-title">Social</h6> 
@@ -32,7 +32,7 @@ function Footer() {
               </div>
             </nav>
           </footer>
-          <p className="text-center text-white pb-3">Copyright © 2024 - All right reserved</p>
+          <p className="text-center text-xs text-base-content pb-3">Copyright © 2024 - All right reserved</p>
         </div>
         </>
     )
