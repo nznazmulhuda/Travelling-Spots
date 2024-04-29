@@ -38,6 +38,7 @@ function AuthProvider({children}) {
 
     const signOutUser = () => {
         setLoading(true);
+        setEmailCheck("")
         return signOut(auth)
             .then(() => toast.success("Sign out success!"))
             .catch((e) => toast.error(e.message));

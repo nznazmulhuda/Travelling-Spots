@@ -4,10 +4,10 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
 function EmailVerifyRoute({ children }) {
-    const { emailCheck } = useContext(AuthContext);
+    const { emailCheck, user } = useContext(AuthContext);
 
-    if (emailCheck) {
-        return <Navigate to={"/"} />;
+    if (!user) {
+        return <Navigate to={"/login"} />;
     } else {
         return children;
     }

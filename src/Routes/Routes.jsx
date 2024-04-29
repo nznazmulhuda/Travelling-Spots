@@ -71,6 +71,7 @@ const Router = createBrowserRouter([
                     <EmailVerify />
                 </EmailVerifyRoute>
             }
+            
         ]
     }
 ])
