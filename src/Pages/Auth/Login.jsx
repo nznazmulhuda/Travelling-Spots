@@ -44,10 +44,10 @@ function Login() {
     }
 
   return (
-    <>
-    <div className="my-8 md:my-9 lg:my-10 container mx-auto flex flex-col items-center justify-center">
+    <div className="border-y-2 border-green-600 rounded-3xl my-10">
+    <div className="container mx-auto flex flex-col items-center justify-center py-10">
         <div className="w-full">
-            <h1 className="text-center text-3xl font-bold mb-4">
+            <h1 className="text-center text-3xl font-bold mb-5 -mt-5">
                 Log<span className="text-green-700">in</span>
             </h1>
 
@@ -100,7 +100,7 @@ function Login() {
             </form>
         </div>
     </div>
-    </>
+    </div>
   )
 }
 

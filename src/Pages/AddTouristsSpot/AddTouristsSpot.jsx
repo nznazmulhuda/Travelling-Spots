@@ -58,7 +58,7 @@ function AddTouristsSpot() {
   return (
     <>
         <div className="contaFiner mx-auto my-10 border-t border-b py-10 rounded-t-3xl rounded-b-3xl border-green-700 shadow-2xl">
-            <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-4xl">
+            <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center">
                 <span className="text-green-500">A</span>dd <span className="text-green-500">T</span>ourists <span className="text-green-500">S</span>pot
             </h1>
 

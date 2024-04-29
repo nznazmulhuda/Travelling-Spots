@@ -79,10 +79,10 @@ function Register() {
 
 
   return (
-    <>
-    <div className="my-8 md:my-9 lg:my-10 container mx-auto flex flex-col items-center justify-center">
+    <div className="border-y-2 border-green-600 mt-10 rounded-3xl">
+    <div className="container mx-auto flex flex-col items-center py-10 justify-center">
         <div className="w-full">
-            <h1 className="text-center text-3xl font-bold mb-4">
+            <h1 className="text-center text-3xl font-bold mb-5 -mt-5">
                 <span className="text-green-700">Reg</span>ister
             </h1>
 
@@ -158,7 +158,7 @@ function Register() {
             </div>
         </div>
     </div>
-    </>
+    </div>
   )
 }
 
