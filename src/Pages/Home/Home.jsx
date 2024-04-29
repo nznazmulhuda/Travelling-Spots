@@ -3,6 +3,9 @@ import Banner from "../../Components/Home/Banner"
 import SpotCard2 from "../../Components/Home/SpotCard2"
 import { useEffect, useState } from "react"
 import CountryCard from "../../Components/Home/CountryCard"
+import Faq from "../../Components/Home/Faq"
+import Lottie from "lottie-react";
+import faq from '../../assets/faq.json'
 
 
 function Home() {
@@ -25,7 +28,7 @@ function Home() {
     return (
         <>
         <div>
-            <div>
+            {/* <div>
                 <Banner />
             </div>
 
@@ -51,6 +54,21 @@ function Home() {
                     {
                         category.map((data, id)=> <CountryCard key={id} data={data} />)
                     }
+                </div>
+            </div> */}
+
+            <div className="my-10 border-y-2 py-10 border-green-600 rounded-3xl">
+                <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-5 -mt-5"><span className="text-green-600">F</span>requently <span className="text-green-600">A</span>sked <span className="text-green-600">Q</span>uestions</h1>
+
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 container mx-auto gap-5">
+                    <div className="flex items-center justify-center">
+                        <Lottie animationData={faq} className="w-full h-[50vh] md:h-[70vh]" />
+                    </div>
+
+
+                    <div className="flex flex-col gap-3 items-center justify-center">
+                        <Faq />
+                    </div>
                 </div>
             </div>
         </div>

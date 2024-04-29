@@ -4,8 +4,7 @@ import {RxCross1} from 'react-icons/rx'
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from '../AuthProvider/AuthProvider'
 import { FiSun } from "react-icons/fi";
-import { FaMoon, FaRegMoon } from "react-icons/fa";
-import avater from '.././assets/avater.png'
+import { FaMoon } from "react-icons/fa";
 
 function Navbar() {
     const [isMenu, setIsMenu] = useState(false)
@@ -87,9 +86,9 @@ function Navbar() {
                     </div>
 
                     <Link to={"/"} className="flex items-center justify-center">
-                        <div className="flex flex-row lg:flex-col">
+                        <div className="flex gap-3">
                             <h1 className="md:text-2xl lg:text-3xl font-bold"><span className="text-green-500">E</span>arth</h1>
-                            <h1 className="md:text-2xl lg:text-3xl font-bold md:ml-3 lg:ml-7"><span className="text-green-500">P</span>review</h1>
+                            <h1 className="md:text-2xl lg:text-3xl font-bold"><span className="text-green-500">P</span>review</h1>
                         </div>
                     </Link>
 
