@@ -21,8 +21,8 @@ function AddTouristsSpot() {
         const travelTime = form.travelTime.value;
         const totalVisitors = form.totalVisitors.value;
         const shortDisc = form.shortDisc.value;
-        const email = form.email.value;
-        const name = form.name.value;
+        const email = user.email;
+        const name = user.displayName;
 
         const spot = {
             photoUrl,
@@ -126,7 +126,7 @@ function AddTouristsSpot() {
                     
                     <div className="space-y-2 flex flex-col items-start gap-2 mb-8">
                         <label className="text-sm md:text-lg lg:text-xl font-normal" htmlFor="photoUrl">Name</label>
-                        <input className="outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3" type="text" name="name" placeholder="Name" required />
+                        <input className={`outline-none border-b w-full py-2 focus:border-b-green-800 focus:shadow-xl px-3 ${user.displayName && 'cursor-not-allowed'}`} type="email" name="email" value={user.displayName} disabled={user.displayName && 'disabled'} placeholder="Name" required />
                     </div>
                     
                     <div className="space-y-2 flex flex-col items-start gap-2 mb-8">

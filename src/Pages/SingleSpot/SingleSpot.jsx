@@ -19,10 +19,15 @@ function SingleSpot() {
   return (
     <>
       <div className="my-10 border-y-2 py-10 rounded-3xl border-green-600">
-        <div className="w-full h-[40vh] relative">
+
+        <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-5 -mt-5">
+            <span className="text-green-500">D</span>etails <span className="text-green-500">A</span>bout: {" "}{spotName}
+        </h1>
+
+        <div className="w-full h-[45vh] relative">
           <img className="w-full h-full rounded-xl" src={photoUrl} alt="" />
           <div className="w-full h-full bg-black absolute top-0 rounded-xl opacity-55"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold flex flex-col items-center justify-center">
             <h1 className="text-xl md:text-2xl lg:text-3xl mb-3">{spotName}</h1>
             <h1>{location}, <span>{countryName}</span></h1>
           </div>
