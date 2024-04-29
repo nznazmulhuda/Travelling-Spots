@@ -11,9 +11,7 @@ function PrivateRoute({ children }) {
         return children;
     } else if (loading) {
         return (
-            <div className="p-5 mt-10">
-                <span className="loading loading-bars loading-lg absolute left-1/2 -translate-x-1/2"></span>
-            </div>
+            <div className="flex items-center justify-center my-8 md:my-9 lg:my-10"><span className="loading loading-spinner loading-lg"></span></div>
         );
     } else {
         return <Navigate state={pathname} to={"/login"} />;

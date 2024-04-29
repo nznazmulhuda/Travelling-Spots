@@ -9,11 +9,13 @@ import UpdateTouristSpot from "../Pages/UpdateTouristSpot/UpdateTouristSpot";
 import MyLists from "../Pages/MyLists/MyLists";
 import AllTouristsSpot from "../Pages/AllTouristsSpot/AllTouristsSpot";
 import SingleSpot from "../Pages/SingleSpot/SingleSpot";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",

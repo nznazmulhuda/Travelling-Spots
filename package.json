@@ -12,6 +12,7 @@
   "dependencies": {
     "firebase": "^10.11.1",
     "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.4",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
