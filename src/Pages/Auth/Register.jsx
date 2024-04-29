@@ -6,9 +6,11 @@ import { AuthContext } from "../../AuthProvider/AuthProvider"
 import { toast } from "react-toastify"
 import { updateProfile } from "firebase/auth"
 import { auth } from "../../Firebase/Firebase.config"
+import useTitle from "react-dynamic-title"
 
 function Register() {
     
+    useTitle("Register");
     const {state, pathname} = useLocation()
     const navigate = useNavigate()
 

@@ -8,10 +8,12 @@ import Lottie from "lottie-react";
 import faq from '../../assets/faq.json'
 import contact from '../../assets/contact.json'
 import ContactUs from "../../Components/Home/ContactUs"
+import useTitle from "react-dynamic-title"
 
 
 function Home() {
 
+    useTitle("Home")
     const [datas, setDatas] = useState([])
     const category = useLoaderData()
 

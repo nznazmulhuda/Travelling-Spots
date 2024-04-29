@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import SpotCard from '../../Components/Country/SpotCard'
+import useTitle from "react-dynamic-title"
 
 
 function Country() {
 
     const {countryName} = useParams()
     const [cards, setCards] = useState([])
-
+    useTitle(countryName);
+    
     useEffect(()=> {
         fetch(`http://localhost:5000/category/${countryName}`)
             .then(res=>res.json())

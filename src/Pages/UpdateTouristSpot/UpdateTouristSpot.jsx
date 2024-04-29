@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useTitle from "react-dynamic-title";
 import { json, useNavigate, useParams } from "react-router-dom"
 import {toast} from 'react-toastify'
 
@@ -9,48 +10,51 @@ function UpdateTouristSpot() {
     const [data, setData] = useState({})
     const navigate = useNavigate()
 
-    const {photoUrl,spotName,countryName,location,cost,season,travelTime,totalVisitors,shortDisc,_id} = data;
-
+    
     useEffect(()=> {
         fetch(`http://localhost:5000/details/${id}`)
-            .then(res=>res.json())
-            .then(data=>setData(data))
+        .then(res=>res.json())
+        .then(data=>setData(data))
     }, [])
+    
+    const {photoUrl,spotName,countryName,location,cost,season,travelTime,totalVisitors,shortDisc,_id} = data;
 
-  const handleAddSpot = e => {
-    e.preventDefault();
-    const form = e.target;
-    const photoUrl = form.photoUrl.value;
-    const spotName = form.spotName.value;
-    const countryName = form.countryName.value;
-    const location = form.location.value;
-    const cost = form.cost.value;
-    const season = form.season.value;
-    const travelTime = form.travelTime.value;
-    const totalVisitors = form.totalVisitors.value;
-    const shortDisc = form.shortDisc.value;
+    useTitle("Update " + spotName);
 
-    const newSpotDetail = {
-        photoUrl,
-        spotName,
-        countryName,
-        location,
-        cost,
-        season,
-        travelTime,
-        totalVisitors,
-        shortDisc,
-    }
+    const handleAddSpot = e => {
+        e.preventDefault();
+        const form = e.target;
+        const photoUrl = form.photoUrl.value;
+        const spotName = form.spotName.value;
+        const countryName = form.countryName.value;
+        const location = form.location.value;
+        const cost = form.cost.value;
+        const season = form.season.value;
+        const travelTime = form.travelTime.value;
+        const totalVisitors = form.totalVisitors.value;
+        const shortDisc = form.shortDisc.value;
 
-    fetch(`http://localhost:5000/update/${_id}`, {
-        method: "put",
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify(newSpotDetail)
-    })
-    .then(res=>res.json())
-    .then(data=>{
-        toast.success("Spot Updated!");
-        navigate("/my-lists");
+        const newSpotDetail = {
+            photoUrl,
+            spotName,
+            countryName,
+            location,
+            cost,
+            season,
+            travelTime,
+            totalVisitors,
+            shortDisc,
+        }
+
+        fetch(`http://localhost:5000/update/${_id}`, {
+            method: "put",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(newSpotDetail)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            toast.success("Spot Updated!");
+            navigate("/my-lists");
     })
 }
 

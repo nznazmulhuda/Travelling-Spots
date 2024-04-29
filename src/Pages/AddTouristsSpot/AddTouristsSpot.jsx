@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {AuthContext} from '../../AuthProvider/AuthProvider'
+import useTitle from "react-dynamic-title";
 
 
 function AddTouristsSpot() {
-
+    useTitle("Add Tourists Spot");
     const navigate = useNavigate()
     const {user, emailCheck} = useContext(AuthContext)
 

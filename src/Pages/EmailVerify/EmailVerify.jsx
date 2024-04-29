@@ -4,10 +4,12 @@ import { updateEmail } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
+import useTitle from "react-dynamic-title";
 
 
 function EmailVerify() {
     
+    useTitle("Add Email");
     const {loading, emailCheck, setEmailCheck} = useContext(AuthContext)
     const navigate = useNavigate()
     const {state} = useLocation()

@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import {AuthContext} from '../../AuthProvider/AuthProvider'
 import Row from "../../Components/MyLists/Row"
 import { Navigate, useLocation } from "react-router-dom"
+import useTitle from "react-dynamic-title"
 
 
 function MyLists() {
@@ -10,6 +11,8 @@ function MyLists() {
   const {user, emailCheck} = useContext(AuthContext)
   const [datas, setDatas] = useState([])
   const {pathname} = useLocation()
+
+  useTitle(user.displayName + " lists");
 
   useEffect(()=> {
     fetch(`http://localhost:5000/myLists/${user.email}`)

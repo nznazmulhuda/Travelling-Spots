@@ -3,9 +3,11 @@ import {FaGoogle, FaGithub} from 'react-icons/fa6'
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "react-dynamic-title";
 
 function Login() {
 
+    useTitle("Login");
     const {emailLogin, googleLogin, githubLogin, loading, setUser, user} = useContext(AuthContext)
     const navigate = useNavigate()
     const { state } = useLocation();

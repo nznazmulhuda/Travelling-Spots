@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useLoaderData } from "react-router-dom"
 import SpotCard2 from '../../Components/Home/SpotCard2'
+import useTitle from "react-dynamic-title"
 
 
 function AllTouristsSpot() {
 
+  useTitle("All Tourists Spot")
   const [displayData, setDisplayData] = useState([])
   const [sortData, setSortData] = useState([])
 
@@ -23,11 +25,7 @@ function AllTouristsSpot() {
 
   return (
     <>
-
-
       <div className="my-10 border-y-2 border-green-600 rounded-3xl py-10">
-
-
       <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center"><span className="text-green-600">A</span>ll <span className="text-green-600">T</span>ourists <span className="text-green-600">S</span>pot</h1>
 
       <div className="text-center mb-5 mt-5">

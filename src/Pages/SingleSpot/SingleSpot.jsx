@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import useTitle from "react-dynamic-title"
 import { useParams } from "react-router-dom"
 
 
@@ -15,6 +16,8 @@ function SingleSpot() {
 
     const {photoUrl, spotName, countryName, location, cost, season, travelTime, totalVisitors, shortDisc, email, name} = details
     const layout = Math.floor(Math.random() * 10);
+
+    useTitle(spotName + " details");
 
   return (
     <>

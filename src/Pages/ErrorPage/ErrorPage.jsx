@@ -1,8 +1,12 @@
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../assets/lottie.json";
 import { Link } from "react-router-dom";
+import useTitle from "react-dynamic-title";
 
 function ErrorPage() {
+
+  useTitle("error!")
+  
   return (
     <>
       <Link to="/">
