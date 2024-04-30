@@ -18,7 +18,7 @@ function Home() {
     const category = useLoaderData()
 
     useEffect(()=> {
-        fetch("http://localhost:5000/addSpots")
+        fetch("https://earth-server-side.vercel.app/addSpots")
             .then(res=>res.json())
             .then(data=>{
                 for (let i = data.length - 1; i > 0; i--) {

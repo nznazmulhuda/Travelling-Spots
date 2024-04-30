@@ -11,7 +11,7 @@ function Country() {
     useTitle(countryName);
     
     useEffect(()=> {
-        fetch(`http://localhost:5000/category/${countryName}`)
+        fetch(`https://earth-server-side.vercel.app/category/${countryName}`)
             .then(res=>res.json())
             .then(data=> setCards(data))
 

@@ -15,7 +15,7 @@ function MyLists() {
   useTitle(user.displayName + " lists");
 
   useEffect(()=> {
-    fetch(`http://localhost:5000/myLists/${user.email}`)
+    fetch(`https://earth-server-side.vercel.app/myLists/${user.email}`)
     .then(res=>res.json())
     .then(data=>setDatas(data))
   }, [])

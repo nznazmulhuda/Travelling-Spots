@@ -23,7 +23,7 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: ()=> fetch("http://localhost:5000/category")
+                loader: ()=> fetch("https://earth-server-side.vercel.app/category")
             },
             {
                 path: "/login",

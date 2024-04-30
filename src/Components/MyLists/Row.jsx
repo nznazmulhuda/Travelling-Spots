@@ -21,7 +21,7 @@ function Row({row,id,datas,setDatas}) {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://earth-server-side.vercel.app/delete/${id}`, {
                     method: "delete"
                 })
                 .then(res=>res.json())

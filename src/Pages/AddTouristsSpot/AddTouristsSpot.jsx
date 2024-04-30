@@ -39,7 +39,7 @@ function AddTouristsSpot() {
             name
         }
 
-        fetch("http://localhost:5000/addSpots", {
+        fetch("https://earth-server-side.vercel.app/addSpots", {
             method: "POST",
             headers: {"content-type": "application/json"},
             body: JSON.stringify(spot)

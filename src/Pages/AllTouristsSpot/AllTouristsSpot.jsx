@@ -11,7 +11,7 @@ function AllTouristsSpot() {
   const [sortData, setSortData] = useState([])
 
   useEffect(()=> {
-    fetch("http://localhost:5000/addSpots")
+    fetch("https://earth-server-side.vercel.app/addSpots")
       .then(res=>res.json())
       .then(data=> {
         setDisplayData(data)

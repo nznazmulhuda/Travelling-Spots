@@ -12,7 +12,7 @@ function UpdateTouristSpot() {
 
     
     useEffect(()=> {
-        fetch(`http://localhost:5000/details/${id}`)
+        fetch(`https://earth-server-side.vercel.app/details/${id}`)
         .then(res=>res.json())
         .then(data=>setData(data))
     }, [])
@@ -46,7 +46,7 @@ function UpdateTouristSpot() {
             shortDisc,
         }
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://earth-server-side.vercel.app/update/${_id}`, {
             method: "put",
             headers: {"content-type": "application/json"},
             body: JSON.stringify(newSpotDetail)
