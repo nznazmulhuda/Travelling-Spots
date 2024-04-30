@@ -164,12 +164,6 @@ function Navbar() {
                             Register
                         </Link>
                     </div>
-                                
-                    <div className={`flex md:hidden lg:hidden justify-around mt-2`}>
-                        {
-                            theme === "dark" ? <FaMoon className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=>handleTheme("light")} /> : <FiSun className="text-xl md:text-2xl ml-5 cursor-pointer" onClick={()=> handleTheme("dark")} />
-                        }
-                    </div>
                 </div>
             }
         </div>
