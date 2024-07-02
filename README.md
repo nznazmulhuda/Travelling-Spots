@@ -1,10 +1,12 @@
-# Earth Preview
-## Live Page: [Earth Preview](https://earth-preview-9130a.web.app/)
-### B9 A10 Type-01 Requirements
+# Travelling Spots Web Application
 
-Welcome to Earth Preview, your ultimate destination for virtual exploration and travel inspiration!
+## Live Page: [Travelling Spots](https://earth-preview-9130a.web.app/)
 
 <hr />
+
+## Overview
+
+Welcome to Travelling Spots Web Application. In this web application you will be able to see the best Travelling Spots also you can upload your own travelling spots. But before you can upload your own experiences, you should create a account. Then you will be able to upload your own experiences.
 
 ## Features
 
