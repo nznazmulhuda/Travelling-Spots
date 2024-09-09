@@ -10,6 +10,7 @@ import contact from "../../assets/contact.json";
 import ContactUs from "../../Components/Home/ContactUs";
 import useTitle from "react-dynamic-title";
 import Explore from "@/Components/Home/Explore";
+import Featured from "@/Components/Home/Featured";
 
 function Home() {
 	useTitle("Home");
@@ -57,6 +58,8 @@ function Home() {
 						)}
 					</div>
 				</div>
+
+				<Featured />
 
 				<div className="my-10 border-y-2 py-10 border-green-600 rounded-3xl">
 					<h1 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-5 -mt-5">
