@@ -14,7 +14,7 @@ export default function Component() {
 						<Link
 							to={"#"}
 							className="group relative rounded-lg overflow-hidden"
-							prefetch={false}
+							
 						>
 							<img
 								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_-Sp2YQCvNkO363Fb5wNU74sXUE5q3v0wGw&s"
@@ -32,7 +32,7 @@ export default function Component() {
 						<Link
 							to={"#"}
 							className="group relative rounded-lg overflow-hidden"
-							prefetch={false}
+							
 						>
 							<img
 								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFT5AFTgJKNENz2PLKM1iN5OujF_p9ij6HJA&s"
@@ -50,7 +50,7 @@ export default function Component() {
 						<Link
 							to={"#"}
 							className="group relative rounded-lg overflow-hidden"
-							prefetch={false}
+							
 						>
 							<img
 								src="https://www.themacleay.com/wp-content/uploads/2016/08/If-you-like-a-good-view-then-heres-a-couple-places-you-need-to-check-out_487_6040471_0_14108963_500.jpg"
